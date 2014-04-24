@@ -33,7 +33,10 @@ exports.register = function(app, options, next) {
       app.log(['info', 'task', 'complete'], 'Task Complete: ' + job.attrs.name);
     })
     .on('fail', function(err, job) {
-      app.log(['error', 'task', 'failed'], 'Task Failed: ' + job.attrs.name, err);
+      app.log(['error', 'task', 'failed'], 'Task Failed: ' + job.attrs.name);
+      if(err) {
+        app.log(['error', 'task', 'failed'], err);
+      }
     });
 
   // Start
@@ -53,7 +56,7 @@ exports.register = function(app, options, next) {
 
       // Start scheduler
       app.task.start();
-      
+
       app.log(['info', 'task', 'started'], 'Started task scheduler');
     });
   });
