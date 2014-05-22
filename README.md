@@ -10,13 +10,13 @@ Powered by [Agenda](https://ghub.io/agenda).
 $ npm install --save nails-task
 ```
 
-## Defining Models
+## Usage
 ```javascript
 // Load the plugin before calling app.start()
 app.plugin('nails-task');
 ```
 
-See the [Agenda Documentation](https://ghub.io/agenda) for more information.
+Agenda is then available as `app.task`, see the [Agenda Documentation](https://ghub.io/agenda) for more information.
 
 ## Licence
 
